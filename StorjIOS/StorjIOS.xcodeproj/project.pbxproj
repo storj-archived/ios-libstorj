@@ -1,0 +1,750 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		93068BC61F0E64D800D1E8F6 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 93068BC51F0E64D800D1E8F6 /* libz.tbd */; };
+		93068BC81F0E64DE00D1E8F6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93068BC71F0E64DE00D1E8F6 /* Security.framework */; };
+		935DE8581F0E3DCA00B01D6D /* StorjIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 935DE84E1F0E3DCA00B01D6D /* StorjIOS.framework */; };
+		935DE85F1F0E3DCA00B01D6D /* StorjIOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 935DE8511F0E3DCA00B01D6D /* StorjIOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		935DE86A1F0E3ED300B01D6D /* StorjWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 935DE8681F0E3ED300B01D6D /* StorjWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		935DE86B1F0E3ED300B01D6D /* StorjWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 935DE8691F0E3ED300B01D6D /* StorjWrapper.m */; };
+		93D0FE3A1F18D6A000FD2D50 /* bip39.c in Sources */ = {isa = PBXBuildFile; fileRef = 93D0FE261F18D6A000FD2D50 /* bip39.c */; };
+		93D0FE3B1F18D6A000FD2D50 /* bip39.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D0FE271F18D6A000FD2D50 /* bip39.h */; };
+		93D0FE3C1F18D6A000FD2D50 /* bip39_english.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D0FE281F18D6A000FD2D50 /* bip39_english.h */; };
+		93D0FE3E1F18D6A000FD2D50 /* crypto.c in Sources */ = {isa = PBXBuildFile; fileRef = 93D0FE2A1F18D6A000FD2D50 /* crypto.c */; };
+		93D0FE3F1F18D6A000FD2D50 /* crypto.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D0FE2B1F18D6A000FD2D50 /* crypto.h */; };
+		93D0FE401F18D6A000FD2D50 /* downloader.c in Sources */ = {isa = PBXBuildFile; fileRef = 93D0FE2C1F18D6A000FD2D50 /* downloader.c */; };
+		93D0FE411F18D6A000FD2D50 /* downloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D0FE2D1F18D6A000FD2D50 /* downloader.h */; };
+		93D0FE421F18D6A000FD2D50 /* http.c in Sources */ = {isa = PBXBuildFile; fileRef = 93D0FE2E1F18D6A000FD2D50 /* http.c */; };
+		93D0FE431F18D6A000FD2D50 /* http.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D0FE2F1F18D6A000FD2D50 /* http.h */; };
+		93D0FE441F18D6A000FD2D50 /* Makefile.am in Resources */ = {isa = PBXBuildFile; fileRef = 93D0FE301F18D6A000FD2D50 /* Makefile.am */; };
+		93D0FE461F18D6A000FD2D50 /* rs.c in Sources */ = {isa = PBXBuildFile; fileRef = 93D0FE321F18D6A000FD2D50 /* rs.c */; };
+		93D0FE471F18D6A000FD2D50 /* rs.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D0FE331F18D6A000FD2D50 /* rs.h */; };
+		93D0FE481F18D6A000FD2D50 /* storj.c in Sources */ = {isa = PBXBuildFile; fileRef = 93D0FE341F18D6A000FD2D50 /* storj.c */; };
+		93D0FE491F18D6A000FD2D50 /* storj.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D0FE351F18D6A000FD2D50 /* storj.h */; };
+		93D0FE4A1F18D6A000FD2D50 /* uploader.c in Sources */ = {isa = PBXBuildFile; fileRef = 93D0FE361F18D6A000FD2D50 /* uploader.c */; };
+		93D0FE4B1F18D6A000FD2D50 /* uploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D0FE371F18D6A000FD2D50 /* uploader.h */; };
+		93D0FE4C1F18D6A000FD2D50 /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 93D0FE381F18D6A000FD2D50 /* utils.c */; };
+		93D0FE4D1F18D6A000FD2D50 /* utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D0FE391F18D6A000FD2D50 /* utils.h */; };
+		DC3866602031D60500693CA2 /* SJBucketCreateCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = DC38665E2031D60500693CA2 /* SJBucketCreateCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC3866612031D60500693CA2 /* SJBucketCreateCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = DC38665F2031D60500693CA2 /* SJBucketCreateCallback.m */; };
+		DC3866652031DCA700693CA2 /* SJBucketListCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = DC3866632031DCA700693CA2 /* SJBucketListCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC3866662031DCA700693CA2 /* SJBucketListCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3866642031DCA700693CA2 /* SJBucketListCallback.m */; };
+		DC3866762031E59700693CA2 /* SJBucketDeleteCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = DC3866742031E59700693CA2 /* SJBucketDeleteCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC3866772031E59700693CA2 /* SJBucketDeleteCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3866752031E59700693CA2 /* SJBucketDeleteCallback.m */; };
+		DC38667A2031F18100693CA2 /* SJFileListCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = DC3866782031F18100693CA2 /* SJFileListCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC38667B2031F18100693CA2 /* SJFileListCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3866792031F18100693CA2 /* SJFileListCallback.m */; };
+		DC38667E2031F18F00693CA2 /* SJFileDeleteCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = DC38667C2031F18F00693CA2 /* SJFileDeleteCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC38667F2031F18F00693CA2 /* SJFileDeleteCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = DC38667D2031F18F00693CA2 /* SJFileDeleteCallback.m */; };
+		DC3866822031F1D900693CA2 /* SJFileDownloadCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = DC3866802031F1D900693CA2 /* SJFileDownloadCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC3866832031F1D900693CA2 /* SJFileDownloadCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3866812031F1D900693CA2 /* SJFileDownloadCallback.m */; };
+		DC3866862031F1E300693CA2 /* SJFileUploadCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = DC3866842031F1E300693CA2 /* SJFileUploadCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC3866872031F1E300693CA2 /* SJFileUploadCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3866852031F1E300693CA2 /* SJFileUploadCallback.m */; };
+		DC38668B2031F2D800693CA2 /* SJBridgeInfoCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = DC3866892031F2D800693CA2 /* SJBridgeInfoCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC38668C2031F2D800693CA2 /* SJBridgeInfoCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = DC38668A2031F2D800693CA2 /* SJBridgeInfoCallback.m */; };
+		DCACD40C201FCB8B0050921B /* SJRegistrationCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = DCACD409201FCB8B0050921B /* SJRegistrationCallback.m */; };
+		DCACD40E201FCB8B0050921B /* SJRegistrationCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = DCACD40B201FCB8B0050921B /* SJRegistrationCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DCACD4692020DDE80050921B /* SJStorjErrorCallbackBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = DCACD4682020DDE80050921B /* SJStorjErrorCallbackBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DCACD4C82021F01A0050921B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 935DE8521F0E3DCA00B01D6D /* Info.plist */; };
+		DCC3685220568C52004813CD /* SJBucket.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC3685020568C52004813CD /* SJBucket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DCC368562056AD2D004813CD /* SJFile.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC368542056AD2D004813CD /* SJFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DCC368572056AD2D004813CD /* SJFile.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC368552056AD2D004813CD /* SJFile.m */; };
+		DCDF707C2068FC9A001B2F95 /* SJBucket.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDF707B2068FC9A001B2F95 /* SJBucket.m */; };
+		DCE4DFBE20325517001A6D1F /* StorjCompletionCallbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = DCE4DFBC20325517001A6D1F /* StorjCompletionCallbacks.h */; };
+		DCE4DFBF20325517001A6D1F /* StorjCompletionCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE4DFBD20325517001A6D1F /* StorjCompletionCallbacks.m */; };
+		DCF0D874208E2B3600C98A84 /* SJFileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DCF0D872208E2B3600C98A84 /* SJFileManager.h */; };
+		DCF0D875208E2B3600C98A84 /* SJFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF0D873208E2B3600C98A84 /* SJFileManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		935DE8591F0E3DCA00B01D6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 935DE8451F0E3DCA00B01D6D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 935DE84D1F0E3DCA00B01D6D;
+			remoteInfo = SwiftyStorj;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		93068BC51F0E64D800D1E8F6 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		93068BC71F0E64DE00D1E8F6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		935DE84E1F0E3DCA00B01D6D /* StorjIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StorjIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		935DE8511F0E3DCA00B01D6D /* StorjIOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StorjIOS.h; sourceTree = "<group>"; };
+		935DE8521F0E3DCA00B01D6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		935DE8571F0E3DCA00B01D6D /* StorjIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StorjIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		935DE8681F0E3ED300B01D6D /* StorjWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorjWrapper.h; sourceTree = "<group>"; };
+		935DE8691F0E3ED300B01D6D /* StorjWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorjWrapper.m; sourceTree = "<group>"; };
+		93C95F3E1F1910D500F6144A /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = StorjTestApp/Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		93D0FE261F18D6A000FD2D50 /* bip39.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bip39.c; sourceTree = "<group>"; };
+		93D0FE271F18D6A000FD2D50 /* bip39.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bip39.h; sourceTree = "<group>"; };
+		93D0FE281F18D6A000FD2D50 /* bip39_english.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bip39_english.h; sourceTree = "<group>"; };
+		93D0FE291F18D6A000FD2D50 /* cli.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cli.c; sourceTree = "<group>"; };
+		93D0FE2A1F18D6A000FD2D50 /* crypto.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = crypto.c; sourceTree = "<group>"; };
+		93D0FE2B1F18D6A000FD2D50 /* crypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypto.h; sourceTree = "<group>"; };
+		93D0FE2C1F18D6A000FD2D50 /* downloader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = downloader.c; sourceTree = "<group>"; };
+		93D0FE2D1F18D6A000FD2D50 /* downloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = downloader.h; sourceTree = "<group>"; };
+		93D0FE2E1F18D6A000FD2D50 /* http.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = http.c; sourceTree = "<group>"; };
+		93D0FE2F1F18D6A000FD2D50 /* http.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = http.h; sourceTree = "<group>"; };
+		93D0FE301F18D6A000FD2D50 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		93D0FE321F18D6A000FD2D50 /* rs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rs.c; sourceTree = "<group>"; };
+		93D0FE331F18D6A000FD2D50 /* rs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rs.h; sourceTree = "<group>"; };
+		93D0FE341F18D6A000FD2D50 /* storj.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = storj.c; sourceTree = "<group>"; };
+		93D0FE351F18D6A000FD2D50 /* storj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = storj.h; sourceTree = "<group>"; };
+		93D0FE361F18D6A000FD2D50 /* uploader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = uploader.c; sourceTree = "<group>"; };
+		93D0FE371F18D6A000FD2D50 /* uploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uploader.h; sourceTree = "<group>"; };
+		93D0FE381F18D6A000FD2D50 /* utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utils.c; sourceTree = "<group>"; };
+		93D0FE391F18D6A000FD2D50 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		DC38665E2031D60500693CA2 /* SJBucketCreateCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SJBucketCreateCallback.h; sourceTree = "<group>"; };
+		DC38665F2031D60500693CA2 /* SJBucketCreateCallback.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SJBucketCreateCallback.m; sourceTree = "<group>"; };
+		DC3866632031DCA700693CA2 /* SJBucketListCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SJBucketListCallback.h; sourceTree = "<group>"; };
+		DC3866642031DCA700693CA2 /* SJBucketListCallback.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SJBucketListCallback.m; sourceTree = "<group>"; };
+		DC3866742031E59700693CA2 /* SJBucketDeleteCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SJBucketDeleteCallback.h; sourceTree = "<group>"; };
+		DC3866752031E59700693CA2 /* SJBucketDeleteCallback.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SJBucketDeleteCallback.m; sourceTree = "<group>"; };
+		DC3866782031F18100693CA2 /* SJFileListCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SJFileListCallback.h; sourceTree = "<group>"; };
+		DC3866792031F18100693CA2 /* SJFileListCallback.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SJFileListCallback.m; sourceTree = "<group>"; };
+		DC38667C2031F18F00693CA2 /* SJFileDeleteCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SJFileDeleteCallback.h; sourceTree = "<group>"; };
+		DC38667D2031F18F00693CA2 /* SJFileDeleteCallback.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SJFileDeleteCallback.m; sourceTree = "<group>"; };
+		DC3866802031F1D900693CA2 /* SJFileDownloadCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SJFileDownloadCallback.h; sourceTree = "<group>"; };
+		DC3866812031F1D900693CA2 /* SJFileDownloadCallback.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SJFileDownloadCallback.m; sourceTree = "<group>"; };
+		DC3866842031F1E300693CA2 /* SJFileUploadCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SJFileUploadCallback.h; sourceTree = "<group>"; };
+		DC3866852031F1E300693CA2 /* SJFileUploadCallback.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SJFileUploadCallback.m; sourceTree = "<group>"; };
+		DC3866892031F2D800693CA2 /* SJBridgeInfoCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SJBridgeInfoCallback.h; sourceTree = "<group>"; };
+		DC38668A2031F2D800693CA2 /* SJBridgeInfoCallback.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SJBridgeInfoCallback.m; sourceTree = "<group>"; };
+		DCACD409201FCB8B0050921B /* SJRegistrationCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJRegistrationCallback.m; sourceTree = "<group>"; };
+		DCACD40B201FCB8B0050921B /* SJRegistrationCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJRegistrationCallback.h; sourceTree = "<group>"; };
+		DCACD4682020DDE80050921B /* SJStorjErrorCallbackBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SJStorjErrorCallbackBlock.h; sourceTree = "<group>"; };
+		DCC3685020568C52004813CD /* SJBucket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SJBucket.h; sourceTree = "<group>"; };
+		DCC368542056AD2D004813CD /* SJFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SJFile.h; sourceTree = "<group>"; };
+		DCC368552056AD2D004813CD /* SJFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SJFile.m; sourceTree = "<group>"; };
+		DCDF707B2068FC9A001B2F95 /* SJBucket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SJBucket.m; sourceTree = "<group>"; };
+		DCE4DFBC20325517001A6D1F /* StorjCompletionCallbacks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StorjCompletionCallbacks.h; sourceTree = "<group>"; };
+		DCE4DFBD20325517001A6D1F /* StorjCompletionCallbacks.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StorjCompletionCallbacks.m; sourceTree = "<group>"; };
+		DCF0D872208E2B3600C98A84 /* SJFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SJFileManager.h; sourceTree = "<group>"; };
+		DCF0D873208E2B3600C98A84 /* SJFileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SJFileManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		935DE84A1F0E3DCA00B01D6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93068BC81F0E64DE00D1E8F6 /* Security.framework in Frameworks */,
+				93068BC61F0E64D800D1E8F6 /* libz.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		935DE8541F0E3DCA00B01D6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				935DE8581F0E3DCA00B01D6D /* StorjIOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		93068BC41F0E64D800D1E8F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93C95F3E1F1910D500F6144A /* SnapKit.framework */,
+				93068BC71F0E64DE00D1E8F6 /* Security.framework */,
+				93068BC51F0E64D800D1E8F6 /* libz.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		935DE8441F0E3DCA00B01D6D = {
+			isa = PBXGroup;
+			children = (
+				935DE8501F0E3DCA00B01D6D /* StorjIOS */,
+				935DE84F1F0E3DCA00B01D6D /* Products */,
+				93068BC41F0E64D800D1E8F6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		935DE84F1F0E3DCA00B01D6D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				935DE84E1F0E3DCA00B01D6D /* StorjIOS.framework */,
+				935DE8571F0E3DCA00B01D6D /* StorjIOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		935DE8501F0E3DCA00B01D6D /* StorjIOS */ = {
+			isa = PBXGroup;
+			children = (
+				DCC3684F20568A5C004813CD /* model */,
+				DCACD408201FCB8B0050921B /* StorjCallbacks */,
+				93D0FE251F18D6A000FD2D50 /* src */,
+				DCF0D871208E2B0500C98A84 /* utils */,
+				935DE8511F0E3DCA00B01D6D /* StorjIOS.h */,
+				935DE8521F0E3DCA00B01D6D /* Info.plist */,
+				935DE8681F0E3ED300B01D6D /* StorjWrapper.h */,
+				935DE8691F0E3ED300B01D6D /* StorjWrapper.m */,
+			);
+			path = StorjIOS;
+			sourceTree = "<group>";
+		};
+		93D0FE251F18D6A000FD2D50 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				93D0FE261F18D6A000FD2D50 /* bip39.c */,
+				93D0FE271F18D6A000FD2D50 /* bip39.h */,
+				93D0FE281F18D6A000FD2D50 /* bip39_english.h */,
+				93D0FE291F18D6A000FD2D50 /* cli.c */,
+				93D0FE2A1F18D6A000FD2D50 /* crypto.c */,
+				93D0FE2B1F18D6A000FD2D50 /* crypto.h */,
+				93D0FE2C1F18D6A000FD2D50 /* downloader.c */,
+				93D0FE2D1F18D6A000FD2D50 /* downloader.h */,
+				93D0FE2E1F18D6A000FD2D50 /* http.c */,
+				93D0FE2F1F18D6A000FD2D50 /* http.h */,
+				93D0FE301F18D6A000FD2D50 /* Makefile.am */,
+				93D0FE321F18D6A000FD2D50 /* rs.c */,
+				93D0FE331F18D6A000FD2D50 /* rs.h */,
+				93D0FE341F18D6A000FD2D50 /* storj.c */,
+				93D0FE351F18D6A000FD2D50 /* storj.h */,
+				93D0FE361F18D6A000FD2D50 /* uploader.c */,
+				93D0FE371F18D6A000FD2D50 /* uploader.h */,
+				93D0FE381F18D6A000FD2D50 /* utils.c */,
+				93D0FE391F18D6A000FD2D50 /* utils.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		DC38665B2031D51000693CA2 /* RegistrationOperations */ = {
+			isa = PBXGroup;
+			children = (
+				DCACD40B201FCB8B0050921B /* SJRegistrationCallback.h */,
+				DCACD409201FCB8B0050921B /* SJRegistrationCallback.m */,
+			);
+			path = RegistrationOperations;
+			sourceTree = "<group>";
+		};
+		DC38665C2031D55500693CA2 /* BucketOperations */ = {
+			isa = PBXGroup;
+			children = (
+				DC38665E2031D60500693CA2 /* SJBucketCreateCallback.h */,
+				DC38665F2031D60500693CA2 /* SJBucketCreateCallback.m */,
+				DC3866632031DCA700693CA2 /* SJBucketListCallback.h */,
+				DC3866642031DCA700693CA2 /* SJBucketListCallback.m */,
+				DC3866742031E59700693CA2 /* SJBucketDeleteCallback.h */,
+				DC3866752031E59700693CA2 /* SJBucketDeleteCallback.m */,
+			);
+			path = BucketOperations;
+			sourceTree = "<group>";
+		};
+		DC38665D2031D5DA00693CA2 /* FileOperations */ = {
+			isa = PBXGroup;
+			children = (
+				DC3866782031F18100693CA2 /* SJFileListCallback.h */,
+				DC3866792031F18100693CA2 /* SJFileListCallback.m */,
+				DC38667C2031F18F00693CA2 /* SJFileDeleteCallback.h */,
+				DC38667D2031F18F00693CA2 /* SJFileDeleteCallback.m */,
+				DC3866802031F1D900693CA2 /* SJFileDownloadCallback.h */,
+				DC3866812031F1D900693CA2 /* SJFileDownloadCallback.m */,
+				DC3866842031F1E300693CA2 /* SJFileUploadCallback.h */,
+				DC3866852031F1E300693CA2 /* SJFileUploadCallback.m */,
+			);
+			path = FileOperations;
+			sourceTree = "<group>";
+		};
+		DC3866882031F2C500693CA2 /* BridgeOperations */ = {
+			isa = PBXGroup;
+			children = (
+				DC3866892031F2D800693CA2 /* SJBridgeInfoCallback.h */,
+				DC38668A2031F2D800693CA2 /* SJBridgeInfoCallback.m */,
+			);
+			path = BridgeOperations;
+			sourceTree = "<group>";
+		};
+		DCACD408201FCB8B0050921B /* StorjCallbacks */ = {
+			isa = PBXGroup;
+			children = (
+				DC3866882031F2C500693CA2 /* BridgeOperations */,
+				DC38665D2031D5DA00693CA2 /* FileOperations */,
+				DC38665C2031D55500693CA2 /* BucketOperations */,
+				DC38665B2031D51000693CA2 /* RegistrationOperations */,
+				DCACD4682020DDE80050921B /* SJStorjErrorCallbackBlock.h */,
+				DCE4DFBC20325517001A6D1F /* StorjCompletionCallbacks.h */,
+				DCE4DFBD20325517001A6D1F /* StorjCompletionCallbacks.m */,
+			);
+			path = StorjCallbacks;
+			sourceTree = "<group>";
+		};
+		DCC3684F20568A5C004813CD /* model */ = {
+			isa = PBXGroup;
+			children = (
+				DCC3685020568C52004813CD /* SJBucket.h */,
+				DCDF707B2068FC9A001B2F95 /* SJBucket.m */,
+				DCC368542056AD2D004813CD /* SJFile.h */,
+				DCC368552056AD2D004813CD /* SJFile.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		DCF0D871208E2B0500C98A84 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				DCF0D872208E2B3600C98A84 /* SJFileManager.h */,
+				DCF0D873208E2B3600C98A84 /* SJFileManager.m */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		935DE84B1F0E3DCA00B01D6D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCE4DFBE20325517001A6D1F /* StorjCompletionCallbacks.h in Headers */,
+				93D0FE4B1F18D6A000FD2D50 /* uploader.h in Headers */,
+				93D0FE431F18D6A000FD2D50 /* http.h in Headers */,
+				DCACD4692020DDE80050921B /* SJStorjErrorCallbackBlock.h in Headers */,
+				DCACD40E201FCB8B0050921B /* SJRegistrationCallback.h in Headers */,
+				DC3866602031D60500693CA2 /* SJBucketCreateCallback.h in Headers */,
+				93D0FE4D1F18D6A000FD2D50 /* utils.h in Headers */,
+				DC3866862031F1E300693CA2 /* SJFileUploadCallback.h in Headers */,
+				DC38667A2031F18100693CA2 /* SJFileListCallback.h in Headers */,
+				DCC3685220568C52004813CD /* SJBucket.h in Headers */,
+				DC38668B2031F2D800693CA2 /* SJBridgeInfoCallback.h in Headers */,
+				DC38667E2031F18F00693CA2 /* SJFileDeleteCallback.h in Headers */,
+				DCC368562056AD2D004813CD /* SJFile.h in Headers */,
+				DC3866652031DCA700693CA2 /* SJBucketListCallback.h in Headers */,
+				DC3866822031F1D900693CA2 /* SJFileDownloadCallback.h in Headers */,
+				DC3866762031E59700693CA2 /* SJBucketDeleteCallback.h in Headers */,
+				93D0FE471F18D6A000FD2D50 /* rs.h in Headers */,
+				93D0FE411F18D6A000FD2D50 /* downloader.h in Headers */,
+				93D0FE491F18D6A000FD2D50 /* storj.h in Headers */,
+				935DE85F1F0E3DCA00B01D6D /* StorjIOS.h in Headers */,
+				935DE86A1F0E3ED300B01D6D /* StorjWrapper.h in Headers */,
+				93D0FE3C1F18D6A000FD2D50 /* bip39_english.h in Headers */,
+				93D0FE3B1F18D6A000FD2D50 /* bip39.h in Headers */,
+				93D0FE3F1F18D6A000FD2D50 /* crypto.h in Headers */,
+				DCF0D874208E2B3600C98A84 /* SJFileManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		935DE84D1F0E3DCA00B01D6D /* StorjIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 935DE8621F0E3DCA00B01D6D /* Build configuration list for PBXNativeTarget "StorjIOS" */;
+			buildPhases = (
+				935DE8491F0E3DCA00B01D6D /* Sources */,
+				935DE84A1F0E3DCA00B01D6D /* Frameworks */,
+				935DE84B1F0E3DCA00B01D6D /* Headers */,
+				935DE84C1F0E3DCA00B01D6D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StorjIOS;
+			productName = SwiftyStorj;
+			productReference = 935DE84E1F0E3DCA00B01D6D /* StorjIOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		935DE8561F0E3DCA00B01D6D /* StorjIOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 935DE8651F0E3DCA00B01D6D /* Build configuration list for PBXNativeTarget "StorjIOSTests" */;
+			buildPhases = (
+				935DE8531F0E3DCA00B01D6D /* Sources */,
+				935DE8541F0E3DCA00B01D6D /* Frameworks */,
+				935DE8551F0E3DCA00B01D6D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				935DE85A1F0E3DCA00B01D6D /* PBXTargetDependency */,
+			);
+			name = StorjIOSTests;
+			productName = SwiftyStorjTests;
+			productReference = 935DE8571F0E3DCA00B01D6D /* StorjIOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		935DE8451F0E3DCA00B01D6D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Bogdan Artemenko";
+				TargetAttributes = {
+					935DE84D1F0E3DCA00B01D6D = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 5YZ2ANFT4Z;
+						ProvisioningStyle = Automatic;
+					};
+					935DE8561F0E3DCA00B01D6D = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = D67U97CJD9;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 935DE8481F0E3DCA00B01D6D /* Build configuration list for PBXProject "StorjIOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 935DE8441F0E3DCA00B01D6D;
+			productRefGroup = 935DE84F1F0E3DCA00B01D6D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				935DE84D1F0E3DCA00B01D6D /* StorjIOS */,
+				935DE8561F0E3DCA00B01D6D /* StorjIOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		935DE84C1F0E3DCA00B01D6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCACD4C82021F01A0050921B /* Info.plist in Resources */,
+				93D0FE441F18D6A000FD2D50 /* Makefile.am in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		935DE8551F0E3DCA00B01D6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		935DE8491F0E3DCA00B01D6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93D0FE3A1F18D6A000FD2D50 /* bip39.c in Sources */,
+				93D0FE461F18D6A000FD2D50 /* rs.c in Sources */,
+				DC3866832031F1D900693CA2 /* SJFileDownloadCallback.m in Sources */,
+				DCF0D875208E2B3600C98A84 /* SJFileManager.m in Sources */,
+				DC3866872031F1E300693CA2 /* SJFileUploadCallback.m in Sources */,
+				93D0FE4A1F18D6A000FD2D50 /* uploader.c in Sources */,
+				DC3866662031DCA700693CA2 /* SJBucketListCallback.m in Sources */,
+				935DE86B1F0E3ED300B01D6D /* StorjWrapper.m in Sources */,
+				DC38667B2031F18100693CA2 /* SJFileListCallback.m in Sources */,
+				DCC368572056AD2D004813CD /* SJFile.m in Sources */,
+				DCDF707C2068FC9A001B2F95 /* SJBucket.m in Sources */,
+				93D0FE421F18D6A000FD2D50 /* http.c in Sources */,
+				DC38667F2031F18F00693CA2 /* SJFileDeleteCallback.m in Sources */,
+				93D0FE481F18D6A000FD2D50 /* storj.c in Sources */,
+				93D0FE401F18D6A000FD2D50 /* downloader.c in Sources */,
+				DC38668C2031F2D800693CA2 /* SJBridgeInfoCallback.m in Sources */,
+				DCACD40C201FCB8B0050921B /* SJRegistrationCallback.m in Sources */,
+				DC3866772031E59700693CA2 /* SJBucketDeleteCallback.m in Sources */,
+				93D0FE3E1F18D6A000FD2D50 /* crypto.c in Sources */,
+				93D0FE4C1F18D6A000FD2D50 /* utils.c in Sources */,
+				DCE4DFBF20325517001A6D1F /* StorjCompletionCallbacks.m in Sources */,
+				DC3866612031D60500693CA2 /* SJBucketCreateCallback.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		935DE8531F0E3DCA00B01D6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		935DE85A1F0E3DCA00B01D6D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 935DE84D1F0E3DCA00B01D6D /* StorjIOS */;
+			targetProxy = 935DE8591F0E3DCA00B01D6D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		935DE8601F0E3DCA00B01D6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = StorjIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		935DE8611F0E3DCA00B01D6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = StorjIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		935DE8631F0E3DCA00B01D6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CREATE_INFOPLIST_SECTION_IN_BINARY = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5YZ2ANFT4Z;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/libraries/include\"/**";
+				INFOPLIST_FILE = StorjIOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/libraries/lib\"";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-lnettle",
+					"-lcurl",
+					"-ljson-c",
+					"-lmicrohttpd",
+					"-luv",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.storj.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VALID_ARCHS = "arm64 x86_64 armv7 armv7s";
+			};
+			name = Debug;
+		};
+		935DE8641F0E3DCA00B01D6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CREATE_INFOPLIST_SECTION_IN_BINARY = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5YZ2ANFT4Z;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/libraries/include\"/**";
+				INFOPLIST_FILE = StorjIOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/libraries/lib\"";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-lnettle",
+					"-lcurl",
+					"-ljson-c",
+					"-lmicrohttpd",
+					"-luv",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.storj.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				VALID_ARCHS = "arm64 x86_64 armv7 armv7s";
+			};
+			name = Release;
+		};
+		935DE8661F0E3DCA00B01D6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = D67U97CJD9;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/libraries/include\"/**";
+				INFOPLIST_FILE = SwiftyStorjTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/libraries/lib\"";
+				OTHER_LDFLAGS = (
+					"-lnettle",
+					"-lstorj",
+					"-lcurl",
+					"-ljson-c",
+					"-lmicrohttpd",
+					"-luv",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.angu2111.SwiftyStorjTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftyStorjTests/SwiftyStorjTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		935DE8671F0E3DCA00B01D6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = D67U97CJD9;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/libraries/include\"/**";
+				INFOPLIST_FILE = SwiftyStorjTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/libraries/lib\"";
+				OTHER_LDFLAGS = (
+					"-lnettle",
+					"-lstorj",
+					"-lcurl",
+					"-ljson-c",
+					"-lmicrohttpd",
+					"-luv",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.angu2111.SwiftyStorjTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftyStorjTests/SwiftyStorjTests-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		935DE8481F0E3DCA00B01D6D /* Build configuration list for PBXProject "StorjIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				935DE8601F0E3DCA00B01D6D /* Debug */,
+				935DE8611F0E3DCA00B01D6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		935DE8621F0E3DCA00B01D6D /* Build configuration list for PBXNativeTarget "StorjIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				935DE8631F0E3DCA00B01D6D /* Debug */,
+				935DE8641F0E3DCA00B01D6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		935DE8651F0E3DCA00B01D6D /* Build configuration list for PBXNativeTarget "StorjIOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				935DE8661F0E3DCA00B01D6D /* Debug */,
+				935DE8671F0E3DCA00B01D6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 935DE8451F0E3DCA00B01D6D /* Project object */;
+}
