@@ -99,33 +99,41 @@ void bucket_list_completion_callback(uv_work_t *work_req, int status)
     assert(status == 0);
     get_buckets_request_t *req = work_req->data;
     
-    SJBucketListCallback *callBack = (__bridge_transfer SJBucketListCallback *)req->handle;
-    NSMutableArray *buckets = [NSMutableArray new];
+    SJBucketListCallback *callBack = (__bridge SJBucketListCallback *)req->handle;
+    
     
     if (req->status_code == 401) {
+        NSLog(@"Inv user cred");
         [callBack errorWithCode:req->status_code message:@"Invalid user credentials"];
+        goto clean;
     } else if (req->status_code != 200 && req->status_code != 304) {
+        NSLog(@"Req failed");
         [callBack errorWithCode:req->status_code message:@"Request failed"];
+        goto clean;
     }
     if(DEBUG){
         NSLog(@"TotalBuckets: %d",req->total_buckets);
     }
-    for (int i = 0; i < req->total_buckets; i++) {
-        storj_bucket_meta_t *bucket = &req->buckets[i];
-        if(DEBUG){
-            printf("ID: %s \tDecrypted: %s \tCreated: %s \tName: %s\n",
-                   bucket->id, bucket->decrypted ? "true" : "false",
-                   bucket->created, bucket->name);
+    if(req->total_buckets > 0) {
+        NSMutableArray *buckets = [NSMutableArray new];
+        for (int i = 0; i < req->total_buckets; i++) {
+            storj_bucket_meta_t *bucket = &req->buckets[i];
+            if(DEBUG){
+                printf("ID: %s \tDecrypted: %s \tCreated: %s \tName: %s\n",
+                       bucket->id, bucket->decrypted ? "true" : "false",
+                       bucket->created, bucket->name);
+            }
+            SJBucket *sjBucket = [[SJBucket alloc] initWithCharId:bucket->id
+                                                             name:bucket->name
+                                                          created:bucket->created
+                                                             hash:0
+                                                      isDecrypted:bucket->decrypted];
+            [buckets addObject:sjBucket];
         }
-        SJBucket *sjBucket = [[SJBucket alloc] initWithCharId:bucket->id
-                                                         name:bucket->name
-                                                      created:bucket->created
-                                                         hash:0
-                                                  isDecrypted:bucket->decrypted];
-        [buckets addObject:sjBucket];
+        
+        [callBack successWithArray: buckets];
     }
-    
-    [callBack successWithArray: buckets];
+clean:
     storj_free_get_buckets_request(req);
     free(work_req);
 }

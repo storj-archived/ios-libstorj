@@ -26,11 +26,15 @@
 		93D0FE461F18D6A000FD2D50 /* rs.c in Sources */ = {isa = PBXBuildFile; fileRef = 93D0FE321F18D6A000FD2D50 /* rs.c */; };
 		93D0FE471F18D6A000FD2D50 /* rs.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D0FE331F18D6A000FD2D50 /* rs.h */; };
 		93D0FE481F18D6A000FD2D50 /* storj.c in Sources */ = {isa = PBXBuildFile; fileRef = 93D0FE341F18D6A000FD2D50 /* storj.c */; };
-		93D0FE491F18D6A000FD2D50 /* storj.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D0FE351F18D6A000FD2D50 /* storj.h */; };
+		93D0FE491F18D6A000FD2D50 /* storj.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D0FE351F18D6A000FD2D50 /* storj.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93D0FE4A1F18D6A000FD2D50 /* uploader.c in Sources */ = {isa = PBXBuildFile; fileRef = 93D0FE361F18D6A000FD2D50 /* uploader.c */; };
 		93D0FE4B1F18D6A000FD2D50 /* uploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D0FE371F18D6A000FD2D50 /* uploader.h */; };
 		93D0FE4C1F18D6A000FD2D50 /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 93D0FE381F18D6A000FD2D50 /* utils.c */; };
 		93D0FE4D1F18D6A000FD2D50 /* utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D0FE391F18D6A000FD2D50 /* utils.h */; };
+		DC29DA7720B5BC1B006CC432 /* SJThreadLooper.h in Headers */ = {isa = PBXBuildFile; fileRef = DC29DA7520B5BC1B006CC432 /* SJThreadLooper.h */; };
+		DC29DA7820B5BC1B006CC432 /* SJThreadLooper.m in Sources */ = {isa = PBXBuildFile; fileRef = DC29DA7620B5BC1B006CC432 /* SJThreadLooper.m */; };
+		DC29DA7B20B857FC006CC432 /* SJKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = DC29DA7920B857FC006CC432 /* SJKeys.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC29DA7C20B857FC006CC432 /* SJKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = DC29DA7A20B857FC006CC432 /* SJKeys.m */; };
 		DC3866602031D60500693CA2 /* SJBucketCreateCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = DC38665E2031D60500693CA2 /* SJBucketCreateCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC3866612031D60500693CA2 /* SJBucketCreateCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = DC38665F2031D60500693CA2 /* SJBucketCreateCallback.m */; };
 		DC3866652031DCA700693CA2 /* SJBucketListCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = DC3866632031DCA700693CA2 /* SJBucketListCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -100,6 +104,10 @@
 		93D0FE371F18D6A000FD2D50 /* uploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uploader.h; sourceTree = "<group>"; };
 		93D0FE381F18D6A000FD2D50 /* utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utils.c; sourceTree = "<group>"; };
 		93D0FE391F18D6A000FD2D50 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		DC29DA7520B5BC1B006CC432 /* SJThreadLooper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SJThreadLooper.h; sourceTree = "<group>"; };
+		DC29DA7620B5BC1B006CC432 /* SJThreadLooper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SJThreadLooper.m; sourceTree = "<group>"; };
+		DC29DA7920B857FC006CC432 /* SJKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SJKeys.h; sourceTree = "<group>"; };
+		DC29DA7A20B857FC006CC432 /* SJKeys.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SJKeys.m; sourceTree = "<group>"; };
 		DC38665E2031D60500693CA2 /* SJBucketCreateCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SJBucketCreateCallback.h; sourceTree = "<group>"; };
 		DC38665F2031D60500693CA2 /* SJBucketCreateCallback.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SJBucketCreateCallback.m; sourceTree = "<group>"; };
 		DC3866632031DCA700693CA2 /* SJBucketListCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SJBucketListCallback.h; sourceTree = "<group>"; };
@@ -286,6 +294,8 @@
 				DCDF707B2068FC9A001B2F95 /* SJBucket.m */,
 				DCC368542056AD2D004813CD /* SJFile.h */,
 				DCC368552056AD2D004813CD /* SJFile.m */,
+				DC29DA7920B857FC006CC432 /* SJKeys.h */,
+				DC29DA7A20B857FC006CC432 /* SJKeys.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -295,6 +305,8 @@
 			children = (
 				DCF0D872208E2B3600C98A84 /* SJFileManager.h */,
 				DCF0D873208E2B3600C98A84 /* SJFileManager.m */,
+				DC29DA7520B5BC1B006CC432 /* SJThreadLooper.h */,
+				DC29DA7620B5BC1B006CC432 /* SJThreadLooper.m */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -326,10 +338,12 @@
 				93D0FE411F18D6A000FD2D50 /* downloader.h in Headers */,
 				93D0FE491F18D6A000FD2D50 /* storj.h in Headers */,
 				935DE85F1F0E3DCA00B01D6D /* StorjIOS.h in Headers */,
+				DC29DA7720B5BC1B006CC432 /* SJThreadLooper.h in Headers */,
 				935DE86A1F0E3ED300B01D6D /* StorjWrapper.h in Headers */,
 				93D0FE3C1F18D6A000FD2D50 /* bip39_english.h in Headers */,
 				93D0FE3B1F18D6A000FD2D50 /* bip39.h in Headers */,
 				93D0FE3F1F18D6A000FD2D50 /* crypto.h in Headers */,
+				DC29DA7B20B857FC006CC432 /* SJKeys.h in Headers */,
 				DCF0D874208E2B3600C98A84 /* SJFileManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,11 +467,13 @@
 				93D0FE421F18D6A000FD2D50 /* http.c in Sources */,
 				DC38667F2031F18F00693CA2 /* SJFileDeleteCallback.m in Sources */,
 				93D0FE481F18D6A000FD2D50 /* storj.c in Sources */,
+				DC29DA7820B5BC1B006CC432 /* SJThreadLooper.m in Sources */,
 				93D0FE401F18D6A000FD2D50 /* downloader.c in Sources */,
 				DC38668C2031F2D800693CA2 /* SJBridgeInfoCallback.m in Sources */,
 				DCACD40C201FCB8B0050921B /* SJRegistrationCallback.m in Sources */,
 				DC3866772031E59700693CA2 /* SJBucketDeleteCallback.m in Sources */,
 				93D0FE3E1F18D6A000FD2D50 /* crypto.c in Sources */,
+				DC29DA7C20B857FC006CC432 /* SJKeys.m in Sources */,
 				93D0FE4C1F18D6A000FD2D50 /* utils.c in Sources */,
 				DCE4DFBF20325517001A6D1F /* StorjCompletionCallbacks.m in Sources */,
 				DC3866612031D60500693CA2 /* SJBucketCreateCallback.m in Sources */,
