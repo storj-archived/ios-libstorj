@@ -328,6 +328,7 @@
     http_options->low_speed_time = STORJ_LOW_SPEED_TIME;
     http_options->timeout = STORJ_HTTP_TIMEOUT;
     http_options->cainfo_path = NULL;
+    http_options->proxy_url = NULL;
     
     storj_encrypt_options_t *encrypt_options = malloc(sizeof(storj_encrypt_options_t));
     encrypt_options->mnemonic = [mnemonic cStringUsingEncoding:NSUTF8StringEncoding];
