@@ -498,7 +498,7 @@
     storj_bridge_delete_file(environment,
                              bucket_id,
                              file_id,
-                             (__bridge void *)callback,
+                             (__bridge_retained void *)callback,
                              file_delete_completion_callback);
 }
 
@@ -509,7 +509,7 @@
 {
     NSArray *dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *rootDir = dirPaths[0];
-    environment->tmp_path = [rootDir cStringUsingEncoding:kCFStringEncodingUTF8];
+    environment->tmp_path = strdup([rootDir cStringUsingEncoding:kCFStringEncodingUTF8]);
     
     storj_upload_state_t *upload_state = malloc(sizeof(storj_upload_state_t));
     NSString *fileName = nil;
@@ -522,7 +522,7 @@
         fileName = file;
     }
     
-    char * fname = [fileName cStringUsingEncoding:NSUTF8StringEncoding];
+    char * fname = strdup([fileName cStringUsingEncoding:NSUTF8StringEncoding]);
     FILE *fd = fopen(fname, "r");
     if(!fd){
         
@@ -535,8 +535,8 @@
         .push_shard_limit = 64,
         .rs = true,
         .index = NULL,
-        .bucket_id = [bucketId cStringUsingEncoding:NSUTF8StringEncoding],
-        .file_name = [[file lastPathComponent] cStringUsingEncoding:NSUTF8StringEncoding],
+        .bucket_id = strdup([bucketId cStringUsingEncoding:NSUTF8StringEncoding]),
+        .file_name = strdup([[file lastPathComponent] cStringUsingEncoding:NSUTF8StringEncoding]),
         .fd = fd
     };
     
