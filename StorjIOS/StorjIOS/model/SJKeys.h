@@ -19,7 +19,9 @@
 -(NSString *) getPassword;
 
 -(NSString *) getMnemonic;
-
--(NSDictionary *) describeKeys;
+    
+-(BOOL) areKeysValid;
+    
+-(NSDictionary *) toDictionary;
 
 @end
