@@ -10,18 +10,18 @@
 
 @implementation SJKeys
 {
-    NSString *_user;
+    NSString *_email;
     NSString *_pass;
     NSString *_mnemonic;
 }
 
--(instancetype) initWithUser: (NSString *) user
-                    password: (NSString *) password
-                    mnemonic: (NSString *) mnemonic
+-(instancetype) initWithEmail: (NSString *) email
+                     password: (NSString *) password
+                     mnemonic: (NSString *) mnemonic
 {
     if(self = [super init])
     {
-        _user = user;
+        _email = email;
         _pass = password;
         _mnemonic = mnemonic;
     }
@@ -29,9 +29,9 @@
     return self;
 }
 
--(NSString *) getUser
+-(NSString *) getEmail
 {
-    return _user;
+    return _email;
 }
 
 -(NSString *) getPassword
@@ -46,16 +46,16 @@
 
 -(BOOL) areKeysValid
 {
-    return _user && _user.length > 0 && _pass && _pass.length > 0 && _mnemonic && _mnemonic.length > 0;
+    return _email && _email.length > 0 && _pass && _pass.length > 0 && _mnemonic && _mnemonic.length > 0;
 }
 
 -(NSDictionary *) toDictionary
 {
     
     return @{
-             @"user" : _user ? _user : @"(nil)",
+             @"email" : _email ? _email : @"(nil)",
              @"password" : _pass ? _pass : @"(nil)",
-             @"mnemonic" : _mnemonic ? _pass : @"(nil)"
+             @"mnemonic" : _mnemonic ? _mnemonic : @"(nil)"
              };
 }
 

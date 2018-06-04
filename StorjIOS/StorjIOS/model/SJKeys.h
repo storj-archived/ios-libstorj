@@ -10,18 +10,18 @@
 
 @interface SJKeys : NSObject
 
--(instancetype) initWithUser: (NSString *) user
-                    password: (NSString *) password
-                    mnemonic: (NSString *) mnemonic;
+-(instancetype) initWithEmail: (NSString *) email
+                     password: (NSString *) password
+                     mnemonic: (NSString *) mnemonic;
 
--(NSString *) getUser;
+-(NSString *) getEmail;
 
 -(NSString *) getPassword;
 
 -(NSString *) getMnemonic;
-    
+
 -(BOOL) areKeysValid;
-    
+
 -(NSDictionary *) toDictionary;
 
 @end

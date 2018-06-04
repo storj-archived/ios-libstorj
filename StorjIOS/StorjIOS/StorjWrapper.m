@@ -109,7 +109,7 @@
     int encryptionResult =
     storj_encrypt_write_auth([[self getAuthFile] cStringUsingEncoding:NSUTF8StringEncoding],
                              [passphrase cStringUsingEncoding:NSUTF8StringEncoding],
-                             [[keys getUser] cStringUsingEncoding:NSUTF8StringEncoding],
+                             [[keys getEmail] cStringUsingEncoding:NSUTF8StringEncoding],
                              [[keys getPassword] cStringUsingEncoding:NSUTF8StringEncoding],
                              [[keys getMnemonic] cStringUsingEncoding:NSUTF8StringEncoding]);
     BOOL isSuccess = 0 == encryptionResult;
@@ -174,7 +174,7 @@
 -(BOOL) verifyKeys: (SJKeys *_Nonnull) keys
 {
 #pragma mark TODO implement check for mnemonic verify
-    return [self verifyKeysWithUserEmail:[keys getUser] andPassword:[keys getPassword]];
+    return [self verifyKeysWithUserEmail:[keys getEmail] andPassword:[keys getPassword]];
 }
 
 -(void) getBucketListWithCompletion: (SJBucketListCallback *) callback
@@ -290,7 +290,7 @@
     
     if(!_env)
     {
-        _env = [self initEnvironmentWithUser: [_keys getUser]
+        _env = [self initEnvironmentWithUser: [_keys getEmail]
                                     password: [_keys getPassword]
                                     mnemonic: [_keys getMnemonic]];
         [self startLooper];
@@ -306,7 +306,7 @@
 -(storj_env_t *) initEnvironmentWithKeys: (SJKeys *) keys
 {
     
-    return [self initEnvironmentWithUser:[keys getUser]
+    return [self initEnvironmentWithUser:[keys getEmail]
                                 password:[keys getPassword]
                                 mnemonic:[keys getMnemonic]];
 }
@@ -441,7 +441,7 @@
         return nil;
     }
     
-    return [[SJKeys alloc] initWithUser:[NSString stringWithUTF8String:userEmail]
+    return [[SJKeys alloc] initWithEmail:[NSString stringWithUTF8String:userEmail]
                                password:[NSString stringWithUTF8String:userPassword]
                                mnemonic:[NSString stringWithUTF8String:mnemonic]];
 }
