@@ -188,7 +188,7 @@
 }
 
 -(void) createBucket: (NSString *) bucketName
-       withCallback: (SJBucketCreateCallback *) callback
+        withCallback: (SJBucketCreateCallback *) callback
 {
     if(![self checkEnvironment])
     {
@@ -221,8 +221,8 @@
 }
 
 -(void) deleteFile: (NSString *) fileId
-       fromBucket: (NSString *) bucketId
-   withCompletion: (SJFileDeleteCallback *) callback
+        fromBucket: (NSString *) bucketId
+    withCompletion: (SJFileDeleteCallback *) callback
 {
     if(![self checkEnvironment]){
         [callback errorWithCode:0 errorMessage:@"Unable to retreive environment"];
@@ -233,8 +233,23 @@
 }
 
 -(long) uploadFile: (NSString * _Nonnull) file
-         toBucket: (NSString * _Nonnull) bucketId
-   withCompletion: (SJFileUploadCallback * _Nonnull) completion
+          toBucket: (NSString * _Nonnull) bucketId
+    withCompletion: (SJFileUploadCallback * _Nonnull) completion
+{
+    if(![self checkEnvironment])
+    {
+        [completion errorWithCode:0 errorMessage:@"Unable to retreive environment"];
+        
+        return -1;
+    }
+    
+    return [self _uploadFile:file toBucket:bucketId withCompletion:completion onEnvironment:_env];
+}
+
+-(long) uploadFile: (NSString * _Nonnull) file
+          toBucket: (NSString * _Nonnull) bucketId
+          fileName: (NSString * _Nonnull) fileName
+    withCompletion: (SJFileUploadCallback * _Nonnull) completion
 {
     if(![self checkEnvironment])
     {
@@ -252,9 +267,9 @@
 }
 
 -(long) downloadFile: (NSString *) fileId
-         fromBucket: (NSString *) bucketId
-          localPath: (NSString * _Nonnull) localPath
-     withCompletion: (SJFileDownloadCallback * _Nonnull) callback
+          fromBucket: (NSString *) bucketId
+           localPath: (NSString * _Nonnull) localPath
+      withCompletion: (SJFileDownloadCallback * _Nonnull) callback
 {
     if(![self checkEnvironment])
     {
@@ -442,12 +457,12 @@
     }
     
     return [[SJKeys alloc] initWithEmail:[NSString stringWithUTF8String:userEmail]
-                               password:[NSString stringWithUTF8String:userPassword]
-                               mnemonic:[NSString stringWithUTF8String:mnemonic]];
+                                password:[NSString stringWithUTF8String:userPassword]
+                                mnemonic:[NSString stringWithUTF8String:mnemonic]];
 }
 
 -(void) _getBucketListWithCompletion:(SJBucketListCallback *) callback
-                      onEnvironment: (storj_env_t *) environment
+                       onEnvironment: (storj_env_t *) environment
 {
     storj_bridge_get_buckets(environment,
                              (__bridge_retained void *)callback,
@@ -502,41 +517,53 @@
                              file_delete_completion_callback);
 }
 
--(long) _uploadFile: (NSString * _Nonnull) file
-          toBucket: (NSString * _Nonnull) bucketId
-    withCompletion: (SJFileUploadCallback * _Nonnull) completion
-     onEnvironment: (storj_env_t *) environment
+-(long) _uploadFile: (NSString * _Nonnull) localPath
+           toBucket: (NSString * _Nonnull) bucketId
+           fileName: (NSString * _Nonnull) fileName
+     withCompletion: (SJFileUploadCallback * _Nonnull) completion
+      onEnvironment: (storj_env_t *) environment
 {
     NSArray *dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *rootDir = dirPaths[0];
     environment->tmp_path = strdup([rootDir cStringUsingEncoding:kCFStringEncodingUTF8]);
     
     storj_upload_state_t *upload_state = malloc(sizeof(storj_upload_state_t));
-    NSString *fileName = nil;
-    if(!file){
+    NSString *filePath = nil;
+    if(!localPath){
         return -1;
     }
-    if([file hasPrefix:@"file://"]){
-        fileName = [file stringByReplacingOccurrencesOfString:@"file://" withString:@""];
+    if([localPath hasPrefix:@"file://"]){
+        filePath = [file stringByReplacingOccurrencesOfString:@"file://" withString:@""];
     } else {
-        fileName = file;
+        filePath = localPath;
     }
     
-    char * fname = strdup([fileName cStringUsingEncoding:NSUTF8StringEncoding]);
-    FILE *fd = fopen(fname, "r");
-    if(!fd){
+    char * c_localPath = strdup([filePath cStringUsingEncoding:NSUTF8StringEncoding]);
+    FILE *fileWriter = fopen(c_localPath, "r");
+    if(!fileWriter){
         
         NSLog(@"Error with openning file");
         return -1;
     }
+    char *c_fileName;
+    if(fileName)
+    {
+        c_fileName = strdup([fileName cStringUsingEncoding:NSUTF8StringEncoding]);
+    } else
+    {
+        c_fileName = strdup([[file lastPathComponent] cStringUsingEncoding:NSUTF8StringEncoding]);
+    }
+    
+    char *c_bucketId = strdup([bucketId cStringUsingEncoding:NSUTF8StringEncoding]);
+    
     storj_upload_opts_t upload_opts = {
         .prepare_frame_limit = 1,
         .push_frame_limit = 64,
         .push_shard_limit = 64,
         .rs = true,
         .index = NULL,
-        .bucket_id = strdup([bucketId cStringUsingEncoding:NSUTF8StringEncoding]),
-        .file_name = strdup([[file lastPathComponent] cStringUsingEncoding:NSUTF8StringEncoding]),
+        .bucket_id = c_bucketId,
+        .file_name = c_fileName,
         .fd = fd
     };
     
@@ -551,6 +578,19 @@
     }
     
     return (long)upload_state;
+    
+}
+
+-(long) _uploadFile: (NSString * _Nonnull) file
+           toBucket: (NSString * _Nonnull) bucketId
+     withCompletion: (SJFileUploadCallback * _Nonnull) completion
+      onEnvironment: (storj_env_t *) environment
+{
+    [self _uploadFile: file
+             toBucket: bucketId
+             fileName: nil
+       withCompletion: completion
+        onEnvironment: environment];
 }
 
 #pragma mark TODO add checks for state casting result to prevent NPE
@@ -636,10 +676,5 @@
     
     return result == 0;
 }
-
-
-
-//onEnvironment: (storj_env_t *) environment
-
 
 @end
