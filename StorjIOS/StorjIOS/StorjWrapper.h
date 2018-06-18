@@ -113,6 +113,11 @@ typedef struct {
           toBucket:(NSString * _Nonnull)bucketId
     withCompletion:(SJFileUploadCallback *_Nonnull)completion;
 
+-(long) uploadFile: (NSString * _Nonnull) file
+          toBucket: (NSString * _Nonnull) bucketId
+          fileName: (NSString * _Nonnull) fileName
+    withCompletion: (SJFileUploadCallback * _Nonnull) completion;
+
 -(BOOL) cancelUpload:(long) fileRef;
 
 @end

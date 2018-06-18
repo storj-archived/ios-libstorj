@@ -258,8 +258,14 @@
         return -1;
     }
     
-    return [self _uploadFile:file toBucket:bucketId withCompletion:completion onEnvironment:_env];
+    return [self _uploadFile:file
+                    toBucket:bucketId
+                    fileName:fileName
+              withCompletion:completion
+               onEnvironment:_env];
 }
+
+
 
 -(BOOL) cancelUpload:(long) fileRef
 {
