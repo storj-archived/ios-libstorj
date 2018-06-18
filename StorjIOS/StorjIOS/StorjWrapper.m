@@ -533,7 +533,7 @@
         return -1;
     }
     if([localPath hasPrefix:@"file://"]){
-        filePath = [file stringByReplacingOccurrencesOfString:@"file://" withString:@""];
+        filePath = [localPath stringByReplacingOccurrencesOfString:@"file://" withString:@""];
     } else {
         filePath = localPath;
     }
@@ -551,7 +551,7 @@
         c_fileName = strdup([fileName cStringUsingEncoding:NSUTF8StringEncoding]);
     } else
     {
-        c_fileName = strdup([[file lastPathComponent] cStringUsingEncoding:NSUTF8StringEncoding]);
+        c_fileName = strdup([[localPath lastPathComponent] cStringUsingEncoding:NSUTF8StringEncoding]);
     }
     
     char *c_bucketId = strdup([bucketId cStringUsingEncoding:NSUTF8StringEncoding]);
@@ -564,7 +564,7 @@
         .index = NULL,
         .bucket_id = c_bucketId,
         .file_name = c_fileName,
-        .fd = fd
+        .fd = fileWriter
     };
     
     upload_state = storj_bridge_store_file(environment,
@@ -586,11 +586,11 @@
      withCompletion: (SJFileUploadCallback * _Nonnull) completion
       onEnvironment: (storj_env_t *) environment
 {
-    [self _uploadFile: file
-             toBucket: bucketId
-             fileName: nil
-       withCompletion: completion
-        onEnvironment: environment];
+    return [self _uploadFile: file
+                    toBucket: bucketId
+                    fileName: nil
+              withCompletion: completion
+               onEnvironment: environment];
 }
 
 #pragma mark TODO add checks for state casting result to prevent NPE
